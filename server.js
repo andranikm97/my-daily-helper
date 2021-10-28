@@ -11,6 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 // Middleware
+app.use(requestLogger);
 
 // Routing
 app.use('/api/v1/tasks', router);

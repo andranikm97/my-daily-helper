@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const connectToDB = require('./db/connect');
+const notFound = require('./middleware/notFound');
 const requestLogger = require('./middleware/requestLogger');
 const router = require('./routes/router');
 require('dotenv').config();
@@ -17,6 +18,7 @@ app.use(requestLogger);
 app.use('/api/v1/tasks', router);
 
 // Not found
+app.use(notFound);
 
 // Start up
 const port = process.env.PORT;

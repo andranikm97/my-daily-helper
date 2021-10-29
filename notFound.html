@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Daily Planner</title>
+  </head>
+  <body>
+    <div>
+      <div>Error: 404</div>
+      <div>Sorry, the requested page is not avaliable!</div>
+      <div>
+        <p>Click on the button below to return to a working route:</p>
+        <button id="return-button">Return to home page</button>
+      </div>
+    </div>
+
+    <script>
+      $('#return-button').on('click', () => {
+        window.location = 'http://localhost:5000/';
+      });
+    </script>
+  </body>
+</html>

@@ -22,7 +22,6 @@ const postTask = async (req, res) => {
 const deleteTask = async (req, res) => {
   try {
     const { id: taskID } = req.params;
-    console.log(req.params);
     const deletedTask = await Task.findByIdAndDelete(taskID);
     res.status(200).json(deletedTask);
   } catch (error) {

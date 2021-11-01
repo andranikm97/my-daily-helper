@@ -1,3 +1,23 @@
+const getExistingContent = async () => {
+  const url = 'http://localhost:5000/api/v1/tasks';
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    data.forEach((element) => {
+      $('.content').prepend(taskGenerator(element));
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getExistingContent();
+
 const taskGenerator = (data) => {
   const { content, completed, date, _id: id } = data;
 

@@ -3,7 +3,7 @@ const Task = require('../models/task');
 const getAllTasks = async (req, res) => {
   try {
     const tasks = await Task.find({});
-    res.status(200).json({ tasks });
+    res.status(200).json(tasks);
   } catch (error) {
     res.status(500).json({ error });
   }
@@ -29,8 +29,17 @@ const deleteTask = async (req, res) => {
   }
 };
 
+const deleteAllTasks = async (req, res) => {
+  try {
+    const deletedTasks = await Task.deleteMany({});
+    res.status(200).json(deletedTasks);
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
 module.exports = {
   getAllTasks,
   postTask,
   deleteTask,
+  deleteAllTasks,
 };

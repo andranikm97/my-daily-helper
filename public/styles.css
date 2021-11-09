@@ -108,5 +108,15 @@ body {
   font-size: 30px;
   font-weight: 100;
   border-radius: 2px;
+  position: relative;
+  width: 100%;
+}
+
+.main-container .content .task .date {
+  position: absolute;
+  bottom: 2px;
+  right: 1em;
+  font-weight: 400;
+  font-size: 0.3em;
 }
 /*# sourceMappingURL=styles.css.map */

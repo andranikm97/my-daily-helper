@@ -36,7 +36,9 @@
    2) [ ] Filter data relative only to today's date
    3) [ ] Implement ability to scroll through days
 
-...
+Features to implement:
+1) Make tasks that can be set as persistent, meaning they will not only work for the day but as long as they are not completed. Other tasks should probably be accounted to the day? Right?
+
 
 ## General:
 

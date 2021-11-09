@@ -21,13 +21,24 @@ getExistingContent();
 const taskGenerator = (data) => {
   const { content, completed, date, _id: id } = data;
 
+  let prettyDate = new Date(date);
+
+  prettyDate = `${prettyDate.getMonth()}/${prettyDate.getDate()}/${prettyDate.getFullYear()}`;
+
+  function generateCheckbox(isChecked) {
+    return `${
+      isChecked
+        ? '<input type = "checkbox" checked>'
+        : '<input type = "checkbox" >'
+    }`;
+  }
+
   return `
   <div class = "task" _id = ${id}>
-  <ul>
-  <li>${content}</li>
-  <li>${completed ? 'complete' : 'incomplete'}</li>
-  <li>${date}</li>
-  </ul></div>
+    <div>${content}</div>
+    ${generateCheckbox(completed)}
+    <span class = "date">${prettyDate}</span>
+  </div>
   `;
 };
 
@@ -75,3 +86,5 @@ document.addEventListener('keypress', (e) => {
 });
 
 $('.submission-form').on('submit', submitTask);
+
+function makeCheckBox()

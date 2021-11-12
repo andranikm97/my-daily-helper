@@ -1,3 +1,20 @@
+//* MODAL
+let modal = $('.modal');
+let openModal = $('#openModal');
+
+openModal.click(() => {
+  console.log('Clicked!');
+  modal.css('display', 'block');
+});
+
+window.onclick = function (event) {
+  if (event.target === document.getElementById('choiceModal')) {
+    modal.css('display', 'none');
+  }
+};
+
+//* GET ALL CONTENT
+
 const getExistingContent = async () => {
   const url = 'http://localhost:5000/api/v1/tasks';
   try {
@@ -6,7 +23,6 @@ const getExistingContent = async () => {
     });
 
     const data = await response.json();
-    console.log(data);
 
     data.forEach((element) => {
       $('.content').prepend(taskGenerator(element));
@@ -17,6 +33,8 @@ const getExistingContent = async () => {
 };
 
 getExistingContent();
+
+//* TASK GENERATOR
 
 const taskGenerator = (data) => {
   const { content, completed, date, _id: id } = data;
@@ -41,6 +59,8 @@ const taskGenerator = (data) => {
   </div>
   `;
 };
+
+//* POST TASK
 
 const submitTask = async (e) => {
   e.preventDefault();
@@ -79,12 +99,12 @@ const submitTask = async (e) => {
   }
 };
 
+$('.submission-form').on('submit', submitTask);
+
+//* COMFORT SUBMIT
+
 document.addEventListener('keypress', (e) => {
   if (e.code === 'Enter' && e.shiftKey) {
     submitTask(e);
   }
 });
-
-$('.submission-form').on('submit', submitTask);
-
-function makeCheckBox() {}

@@ -87,4 +87,4 @@ document.addEventListener('keypress', (e) => {
 
 $('.submission-form').on('submit', submitTask);
 
-function makeCheckBox()
+function makeCheckBox() {}

@@ -83,6 +83,8 @@ body {
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
   font-weight: 100;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .main-container .submission-form-container form input {
@@ -95,7 +97,6 @@ body {
 
 .main-container .content {
   height: 80%;
-  background-color: grey;
   overflow: visible;
   position: relative;
   padding: 3px;
@@ -103,13 +104,18 @@ body {
 }
 
 .main-container .content .task {
-  margin: 5px 0px;
+  position: relative;
+  margin: 10px 0px;
+  padding: 3px;
   background-color: white;
+  -webkit-box-shadow: 3px 3px 1px gray;
+          box-shadow: 3px 3px 1px gray;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 2px;
   font-size: 30px;
   font-weight: 100;
-  border-radius: 2px;
-  position: relative;
-  width: 100%;
 }
 
 .main-container .content .task .date {

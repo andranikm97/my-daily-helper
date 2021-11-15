@@ -16,17 +16,38 @@
     <title>Daily Helper</title>
   </head>
   <body>
+    <button id="openModal">open modal</button>
+    <div id="choiceModal" class="modal" name="modal">This is my modal</div>
+
     <div class="main-container">
       <h1>Content</h1>
       <div class="submission-form-container">
-        <form class="submission-form" action="">
+        <!-- <form class="submission-form" action="">
           <textarea name="input" id="input-box"></textarea>
           <input type="submit" value="+" />
-        </form>
+        </form> -->
+
+        <div class="submission-type task" id="submit-task">
+          <span>New</span>
+          <span>Task</span>
+        </div>
+
+        <div class="submission-type reminder" id="submit-reminder">
+          <span>New</span>
+          <span>Reminder</span>
+        </div>
+
+        <div class="submission-type event" id="submit-event">
+          <span>New</span>
+          <span>Event</span>
+        </div>
+
+        <div class="submission-type thought" id="submit-thought">
+          <span>New</span>
+          <span>Thought</span>
+        </div>
       </div>
       <div class="content"></div>
-      <button id="openModal">open modal</button>
-      <div id="choiceModal" class="modal" name="modal">This is my modal</div>
     </div>
 
     <script src="index.js"></script>

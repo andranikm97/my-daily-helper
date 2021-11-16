@@ -27,10 +27,13 @@
    2) [x] Submission form 
    3) [x] Container of information 
 3) [x] Create a task structure generator
-4) [ ] Connect task form with POST request to server
-5) [ ] Connect task displayer with GET request to server
+4) [x] Connect task form with POST request to server
+5) [x] Connect task displayer with GET request to server
 6) [ ] Connect task with delete request to server
 7) [ ] Apply some styling to code
+   1) [ ] Drop-in menu
+   2) [ ] Dropdown menus for different fields (tasks, events, reminders)
+   3) [x] Fix full-screen overflow cutoff
 8) [ ] Make a choice
    1) [ ] Create new schema types, as outlined in 5) of BE
    2) [ ] Filter data relative only to today's date

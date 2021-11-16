@@ -2,14 +2,25 @@ html,
 body {
   font-family: 'Roboto', sans-serif;
   position: relative;
-  height: 98.5%;
+  height: 100%;
   overflow: hidden;
   padding: 5px;
+  margin: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-container {
   position: relative;
-  height: 100%;
+  height: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,6 +28,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 1;
 }
 
 .main-container * {
@@ -128,7 +140,14 @@ body {
   overflow: visible;
   position: relative;
   padding: 3px;
+  margin-bottom: 5px;
   overflow-y: scroll;
+  ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main-container .content::-webkit-scrollbar {
+  display: none;
 }
 
 .main-container .content .task {
@@ -157,10 +176,82 @@ body {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1001;
+  z-index: 1000;
+  height: 80%;
+  width: 75%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+}
+
+.modal .submit-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 40%;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+.modal .submit-form img {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+}
+
+.modal .submit-form img:active {
+  opacity: 0.5;
+}
+
+.modal .submit-form form {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .submit-form form * {
+  margin: 5px 0px;
+}
+
+.modal .submit-form form textarea {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  resize: none;
 }
 /*# sourceMappingURL=styles.css.map */

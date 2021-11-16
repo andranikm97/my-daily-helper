@@ -1,18 +1,3 @@
-//* MODAL
-let modal = $('.modal');
-let openModal = $('#openModal');
-
-openModal.click(() => {
-  console.log('Clicked!');
-  modal.css('display', 'block');
-});
-
-window.onclick = function (event) {
-  if (event.target === document.getElementById('choiceModal')) {
-    modal.css('display', 'none');
-  }
-};
-
 //* GET ALL CONTENT
 
 const getExistingContent = async () => {
@@ -100,6 +85,57 @@ const submitTask = async (e) => {
 };
 
 $('.submission-form').on('submit', submitTask);
+
+//* MAKE MODAL
+let modal = $('.modal');
+let openModal = $('#openModal');
+let closeModalButton = $('#closeModal');
+
+const showModal = () => {
+  modal.css('display', 'flex');
+};
+
+const closeModal = () => {
+  modal.css('display', 'none');
+};
+
+let submissionTypes = $('.submission-type');
+submissionTypes.each(function (index) {
+  $(this).click(() => {
+    const type = $(this).attr('id').split('-')[1];
+    modal.html('');
+    switch (type) {
+      case 'task':
+        modal.append(makeModal(type));
+        break;
+      case 'reminder':
+        modal.append(makeModal(type));
+        break;
+      case 'event':
+        modal.append(makeModal(type));
+        break;
+      case 'thought':
+        modal.append(makeModal(type));
+        break;
+      default:
+        alert('The request task does not exist!');
+        break;
+    }
+
+    modal.css('display', 'flex');
+  });
+});
+
+const makeModal = (type) => {
+  return `<div class = "submit-form">
+    <img src = "./images/close.png" id = "closeModal" class = "closeModalButton" onclick = "closeModal()"/>
+    <form>
+      <h3> Create ${type === 'event' ? 'an' : 'a'} ${type} </h3>
+      <textarea></textarea>
+      <button class = "submit-form-button" type="submit"> Submit </button>
+    </form>
+  </div>`;
+};
 
 //* COMFORT SUBMIT
 

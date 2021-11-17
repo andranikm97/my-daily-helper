@@ -242,6 +242,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 5px;
 }
 
 .modal .submit-form form * {
@@ -249,9 +250,10 @@ body {
 }
 
 .modal .submit-form form textarea {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  width: 90%;
   resize: none;
 }
 /*# sourceMappingURL=styles.css.map */

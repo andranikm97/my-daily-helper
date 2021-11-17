@@ -22,9 +22,9 @@ getExistingContent();
 //* TASK GENERATOR
 
 const taskGenerator = (data) => {
-  const { content, completed, date, _id: id } = data;
+  const { content, completed, dateCreated, _id: id } = data;
 
-  let prettyDate = new Date(date);
+  let prettyDate = new Date(dateCreated);
 
   prettyDate = `${prettyDate.getMonth()}/${prettyDate.getDate()}/${prettyDate.getFullYear()}`;
 
@@ -52,6 +52,7 @@ const submitTask = async (e) => {
 
   const url = 'http://localhost:5000/api/v1/tasks';
   const inputBox = $('#input-box');
+  const { type } = e.target;
 
   try {
     if (inputBox.val().trim() === '') {
@@ -79,8 +80,10 @@ const submitTask = async (e) => {
         console.log("Empty strings won' be submitted to the DB.");
         break;
       default:
-        console.log('Some other error...');
+        console.log(error);
     }
+  } finally {
+    closeModal();
   }
 };
 
@@ -129,10 +132,10 @@ submissionTypes.each(function (index) {
 const makeModal = (type) => {
   return `<div class = "submit-form">
     <img src = "./images/close.png" id = "closeModal" class = "closeModalButton" onclick = "closeModal()"/>
-    <form>
+    <form name = "hello">
       <h3> Create ${type === 'event' ? 'an' : 'a'} ${type} </h3>
-      <textarea></textarea>
-      <button class = "submit-form-button" type="submit"> Submit </button>
+      <textarea id = "input-box"></textarea>
+      <button id = "submit-${type}-button" class = "submit-form-button" value = "${type}" type="submit" onclick="submitTask(event)"> Submit </button>
     </form>
   </div>`;
 };
